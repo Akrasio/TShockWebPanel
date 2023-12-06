@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Dashboard</title>
+
+		<!-- BEGIN META -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="your,keywords">
+		<meta name="description" content="Short explanation about this website">
+		<!-- END META -->
+
+		<!-- BEGIN STYLESHEETS -->
+		<link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet' type='text/css'/>
+		<link type="text/css" rel="stylesheet" href="../../assets/css/theme-default/bootstrap.css?1422792965" />
+		<link type="text/css" rel="stylesheet" href="../../assets/css/theme-default/materialadmin.css?1425466319" />
+		<link type="text/css" rel="stylesheet" href="../../assets/css/theme-default/font-awesome.min.css?1422529194" />
+		<link type="text/css" rel="stylesheet" href="../../assets/css/theme-default/material-design-iconic-font.min.css?1421434286" />
+		<link type="text/css" rel="stylesheet" href="../../assets/css/theme-default/libs/rickshaw/rickshaw.css?1422792967" />
+		<link type="text/css" rel="stylesheet" href="../../assets/css/theme-default/libs/morris/morris.core.css?1420463396" />
+		<link type="text/css" rel="stylesheet" href="../../assets/css/theme-default/libs/toastr/toastr.css?1425466569">
+		<!-- END STYLESHEETS -->
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+        <script type="text/javascript" src="../../assets/js/libs/utils/html5shiv.js?1403934957"></script>
+        <script type="text/javascript" src="../../assets/js/libs/utils/respond.min.js?1403934956"></script>
+        <![endif]-->
+	</head>
+	<body class="menubar-hoverable header-fixed ">
+
+		<!-- BEGIN HEADER-->
+		<header id="header" >
+			<div class="headerbar">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="headerbar-left">
+					<ul class="header-nav header-nav-options">
+						<li class="header-nav-brand" >
+							<div class="brand-holder">
+								<a href="../../html/dashboards/dashboard.html">
+									<span class="text-lg text-bold text-primary">TSHOCKWEB</span>
+								</a>
+							</div>
+						</li>
+						<li>
+							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+								<i class="fa fa-bars"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="headerbar-right">
+					<ul class="header-nav header-nav-options">
+						<li>
+							<a class="btn btn-icon-toggle btn-default" id="tshockweb_refresh_general">
+								<i class="md md-refresh"></i>
+							</a>
+						</li><!--end .dropdown -->
+						<li class="dropdown hidden-xs">
+							<a href="javascript:void(0);" class="btn btn-icon-toggle btn-default" data-toggle="dropdown">
+								<i class="fa fa-power-off"></i>
+							</a>
+							<ul class="dropdown-menu animation-expand">
+								<li class="dropdown-header">What do you want to do?</li>
+								<li>
+									<a class="alert alert-callout alert-info" href="javascript:void(0);" id="tshockweb_reboot">
+										<strong>Reboot</strong><br/>
+										<small>Rebooting TShock server...</small>
+									</a>
+								</li>
+								<li>
+									<a class="alert alert-callout alert-error" href="javascript:void(0);" id="tshockweb_shutdown">
+										<strong>Shutdown</strong><br/>
+										<small>Shutdown TShock server...</small>
+									</a>
+								</li>
+							</ul><!--end .dropdown-menu -->
+						</li><!--end .dropdown -->
+					</ul><!--end .header-nav-options -->
+					<ul class="header-nav header-nav-profile">
+						<li class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">
+								<img src="../../assets/img/terraria/user_logo.png" alt="" />
+								<span class="profile-info" id="tshockweb_profileinfo">
+									<small></small>
+								</span>
+							</a>
+							<ul class="dropdown-menu animation-dock">
+								<li><a style="cursor: pointer;" id="tshockweb_logout"><i class="fa fa-fw fa-power-off text-danger"></i> Logout</a></li>
+							</ul><!--end .dropdown-menu -->
+						</li><!--end .dropdown -->
+					</ul><!--end .header-nav-profile -->
+				</div><!--end #header-navbar-collapse -->
+			</div>
+		</header>
+		<!-- END HEADER-->
+
+		<!-- BEGIN BASE-->
+		<div id="base">
+
+			<!-- BEGIN OFFCANVAS LEFT -->
+			<div class="offcanvas">
+			</div><!--end .offcanvas-->
+			<!-- END OFFCANVAS LEFT -->
+
+			<!-- BEGIN CONTENT-->
+			<div id="content">
+				<section>
+					<div class="section-body">
+						<div class="row">
+
+							<!-- BEGIN ALERT - TIME ON SITE -->
+							<div class="col-md-2 col-sm-6">
+								<div class="card">
+									<div class="card-body no-padding">
+										<div class="alert alert-callout alert-success no-margin">
+											<h1 class="pull-right text-success"><i class="md md-account-circle"></i></h1>
+											<strong class="text-xl" id="tshockweb_amountonserver"></strong><br/>
+											<span class="opacity-50"># of people on the server</span>
+										</div>
+									</div><!--end .card-body -->
+								</div><!--end .card -->
+							</div><!--end .col -->
+							<!-- END ALERT - TIME ON SITE -->
+
+							<!-- BEGIN ALERT - TIME ON SITE -->
+							<div class="col-md-2 col-sm-6">
+								<div class="card">
+									<div class="card-body no-padding">
+										<div class="alert alert-callout alert-info no-margin">
+											<h1 class="pull-right text-info"><i class="md md-av-timer"></i></h1>
+											<strong class="text-xl" id="tshockweb_uptime"></strong><br/>
+											<span class="opacity-50">Uptime of server</span>
+										</div>
+									</div><!--end .card-body -->
+								</div><!--end .card -->
+							</div><!--end .col -->
+							<!-- END ALERT - TIME ON SITE -->
+
+							<!-- BEGIN ALERT - TIME ON SITE -->
+							<div class="col-md-2 col-sm-6">
+								<div class="card">
+									<div class="card-body no-padding">
+										<div class="alert alert-callout alert-warning no-margin">
+											<h1 class="pull-right text-warning"><i class="md md-cloud-queue"></i></h1>
+											<strong class="text-xl" id="tshockweb_world"></strong><br/>
+											<span class="opacity-50">World name</span>
+										</div>
+									</div><!--end .card-body -->
+								</div><!--end .card -->
+							</div><!--end .col -->
+							<!-- END ALERT - TIME ON SITE -->
+
+							<!-- BEGIN ALERT - TIME ON SITE -->
+							<div class="col-md-2 col-sm-6">
+								<div class="card">
+									<div class="card-body no-padding">
+										<div class="alert alert-callout alert-error no-margin">
+											<h1 class="pull-right text-danger"><i class="fa fa-gears"></i></h1>
+											<strong class="text-xl" id="tshockweb_server"></strong><br/>
+											<span class="opacity-50">Server version</span>
+										</div>
+									</div><!--end .card-body -->
+								</div><!--end .card -->
+							</div><!--end .col -->
+							<!-- END ALERT - TIME ON SITE -->
+
+							<!-- BEGIN ALERT - TIME ON SITE -->
+							<div class="col-md-2 col-sm-6">
+								<div class="card">
+									<div class="card-body no-padding">
+										<div class="alert alert-callout alert-black no-margin">
+											<h1 class="pull-right text-black"><i class="fa fa-moon-o"></i></h1>
+											<strong class="text-xl" id="tshockweb_bloodmoon"></strong><br/>
+											<span class="opacity-50">Bloodmoon status</span>
+										</div>
+									</div><!--end .card-body -->
+								</div><!--end .card -->
+							</div><!--end .col -->
+							<!-- END ALERT - TIME ON SITE -->
+
+							<!-- BEGIN ALERT - TIME ON SITE -->
+							<div class="col-md-2 col-sm-6">
+								<div class="card">
+									<div class="card-body no-padding">
+										<div class="alert alert-callout alert-purple no-margin">
+											<h1 class="pull-right text-purple"><i class="md md-wb-sunny"></i></h1>
+											<strong class="text-xl" id="tshockweb_daytime"></strong><br/>
+											<span class="opacity-50">Daytime status</span>
+										</div>
+									</div><!--end .card-body -->
+								</div><!--end .card -->
+							</div><!--end .col -->
+							<!-- END ALERT - TIME ON SITE -->
+
+						</div><!--end .row -->
+						<div class="row">
+
+							<!-- BEGIN TODOS -->
+							<div class="col-md-3">
+								<div class="card ">
+									<div class="card-head">
+										<header>Online users</header>
+										<div class="tools">
+											<a class="btn btn-icon-toggle" id="tshockweb_refresh_onlineusers">
+												<i class="md md-refresh"></i>
+											</a>
+										</div>
+									</div><!--end .card-head -->
+									<div class="card-body no-padding height-9 scroll">
+										<ul class="list" data-sortable="true" id="tshockweb_onlineusers">
+										</ul>
+									</div><!--end .card-body -->
+								</div><!--end .card -->
+							</div><!--end .col -->
+							<!-- END TODOS -->
+
+							<!-- BEGIN SITE ACTIVITY -->
+							<div class="col-md-6">
+								<div class="card ">
+									<div class="row">
+										<div>
+											<div class="card-head">
+												<header>Server Activity</header>
+											</div><!--end .card-head -->
+											<div class="card-body height-9">
+												<div id="flot-visitors-legend" class="flot-legend-horizontal stick-top-right no-y-padding"></div>
+												<div id="flot-visitors" class="flot height-7" data-title="Activity entry" data-color="#7dd8d2,#0aa89e"></div>
+											</div><!--end .card-body -->
+										</div><!--end .col -->
+									</div><!--end .row -->
+								</div><!--end .card -->
+							</div><!--end .col -->
+							<!-- END SITE ACTIVITY -->
+
+							<!-- BEGIN SERVER STATUS -->
+							<div class="col-md-3">
+								<div class="card">
+									<div class="card-head">
+										<header class="text-primary">Live server status</header>
+									</div><!--end .card-head -->
+									<div class="card-body height-5">
+										<div class="pull-right text-center">
+											<em class="text-primary">CPU usage in %</em>
+											<br/>
+											<div id="serverStatusKnob" class="knob knob-shadow knob-primary knob-body-track size-2">
+												<input type="text" class="dial" data-min="0" data-max="100" data-thickness=".09" value="50" data-readOnly=true>
+											</div>
+										</div>
+									</div><!--end .card-body -->
+									<div class="card-body height-4 no-padding">
+										<div class="stick-bottom-left-right">
+											<div id="rickshawGraph" class="height-4" data-color1="#0aa89e" data-color2="rgba(79, 89, 89, 0.2)"></div>
+										</div>
+									</div><!--end .card-body -->
+								</div><!--end .card -->
+							</div><!--end .col -->
+							<!-- END SERVER STATUS -->
+
+						</div><!--end .row -->
+						<div class="row">
+
+							<!-- BEGIN TODOS -->
+							<div class="col-md-3">
+								<div class="card ">
+									<div class="card-head">
+										<header>Registered users</header>
+										<div class="tools">
+											<a class="btn btn-icon-toggle" id="tshockweb_refresh_registeredusers">
+												<i class="md md-refresh"></i>
+											</a>
+										</div>
+									</div><!--end .card-head -->
+									<div class="card-body no-padding height-9 scroll">
+										<ul class="list" data-sortable="true" id="tshockweb_registeredusers">
+										</ul>
+									</div><!--end .card-body -->
+								</div><!--end .card -->
+							</div><!--end .col -->
+							<!-- END TODOS -->
+
+							<!-- BEGIN TODOS -->
+							<div class="col-md-3">
+								<div class="card ">
+									<div class="card-head">
+										<header>Banned users</header>
+										<div class="tools">
+											<a class="btn btn-icon-toggle" id="tshockweb_refresh_bannedusers">
+												<i class="md md-refresh"></i>
+											</a>
+										</div>
+									</div><!--end .card-head -->
+									<div class="card-body no-padding height-9 scroll">
+										<ul class="list" data-sortable="true" id="tshockweb_bannedusers">
+										</ul>
+									</div><!--end .card-body -->
+								</div><!--end .card -->
+							</div><!--end .col -->
+							<!-- END TODOS -->
+
+							<!-- BEGIN NEW REGISTRATIONS -->
+							<div class="col-md-3">
+								<div class="card">
+									<div class="card-head">
+										<header>Quick server actions</header>
+									</div><!--end .card-head -->
+									<div class="card-body no-padding height-9 scroll">
+										<ul class="list">
+											<li class="tile col-md-12">
+												<p><button type="button" class="btn btn-block ink-reaction btn-default-bright" id="tshockweb_bloodmoon_toggle">Toggle bloodmoon</button></p>
+											</li>
+										</ul>
+										<ul class="list">
+											<li class="tile col-md-12">
+												<p><button type="button" class="btn btn-block ink-reaction btn-default-bright" id="tshockweb_meteor_drop">Drop meteor</button></p>
+											</li>
+										</ul>
+										<ul class="list">
+											<li class="tile col-md-12">
+												<p><button type="button" class="btn btn-block ink-reaction btn-default-bright" id="tshockweb_butcher_npcs">Butcher NPCs</button></p>
+											</li>
+										</ul>
+										<ul class="list">
+											<li class="tile col-md-12">
+												<p><button type="button" class="btn btn-block ink-reaction btn-default-bright tshockweb_daytime" id="tshockweb_daytime_day">Set daytime to day</button></p>
+											</li>
+										</ul>
+										<ul class="list">
+											<li class="tile col-md-12">
+												<p><button type="button" class="btn btn-block ink-reaction btn-default-bright tshockweb_daytime" id="tshockweb_daytime_night">Set daytime to night</button></p>
+											</li>
+										</ul>
+										<ul class="list">
+											<li class="tile col-md-12">
+												<p><button type="button" class="btn btn-block ink-reaction btn-default-bright" id="tshockweb_world_save">Save world</button></p>
+											</li>
+										</ul>
+										<ul class="list">
+											<li class="tile col-md-12">
+												<p><button type="button" class="btn btn-block ink-reaction btn-default-bright" id="tshockweb_server_reload">Reload server config</button></p>
+											</li>
+										</ul>
+										<ul class="list">
+											<li class="tile col-md-12">
+												<p><button type="button" class="btn btn-block ink-reaction btn-default-bright tshockweb_world_autosave" id="tshockweb_world_autosave_true">Enable world autosave</button></p>
+											</li>
+										</ul>
+										<ul class="list">
+											<li class="tile col-md-12">
+												<p><button type="button" class="btn btn-block ink-reaction btn-default-bright tshockweb_world_autosave" id="tshockweb_world_autosave_false">Disable world autosave</button></p>
+											</li>
+										</ul>
+									</div><!--end .card-body -->
+								</div><!--end .card -->
+							</div><!--end .col -->
+							<!-- END NEW REGISTRATIONS -->
+						</div><!--end .row -->
+					</div><!--end .section-body -->
+				</section>
+			</div><!--end #content-->
+			<!-- END CONTENT -->
+
+			<!-- BEGIN MENUBAR-->
+			<div id="menubar" class="menubar-inverse ">
+				<div class="menubar-fixed-panel">
+					<div>
+						<a class="btn btn-icon-toggle btn-default menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+							<i class="fa fa-bars"></i>
+						</a>
+					</div>
+					<div class="expanded">
+						<a href="../../html/dashboards/dashboard.html">
+							<span class="text-lg text-bold text-primary ">MATERIAL&nbsp;ADMIN</span>
+						</a>
+					</div>
+				</div>
+				<div class="menubar-scroll-panel">
+
+					<!-- BEGIN MAIN MENU -->
+					<ul id="main-menu" class="gui-controls">
+
+						<!-- BEGIN DASHBOARD -->
+						<li>
+							<a href="../../html/dashboards/dashboard.html" class="active">
+								<div class="gui-icon"><i class="md md-home"></i></div>
+								<span class="title">Dashboard</span>
+							</a>
+						</li><!--end /menu-li -->
+						<!-- END DASHBOARD -->
+
+						<!-- BEGIN PAGES -->
+						<li>
+							<a href="../pages/commandboard.html">
+								<div class="gui-icon"><i class="md md-computer"></i></div>
+								<span class="title">Command board</span>
+							</a>
+						</li><!--end /menu-li -->
+						<!-- END FORMS -->
+
+
+					</ul><!--end .main-menu -->
+					<!-- END MAIN MENU -->
+
+					<div class="menubar-foot-panel">
+						<small class="no-linebreak hidden-folded">
+							<span class="opacity-75">Copyright &copy; 2014</span> <strong>CodeCovers</strong>
+						</small>
+					</div>
+				</div><!--end .menubar-scroll-panel-->
+			</div><!--end #menubar-->
+			<!-- END MENUBAR -->
+
+		</div><!--end #base-->
+		<!-- END BASE -->
+
+		<!-- BEGIN JAVASCRIPT -->
+		<script src="../../assets/js/libs/jquery/jquery-1.11.2.min.js"></script>
+		<script src="../../assets/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
+		<script src="../../assets/js/libs/jquery-ui/jquery-ui.min.js"></script>
+		<script src="../../assets/js/libs/bootstrap/bootstrap.min.js"></script>
+		<script src="../../assets/js/libs/spin.js/spin.min.js"></script>
+		<script src="../../assets/js/libs/autosize/jquery.autosize.min.js"></script>
+		<script src="../../assets/js/libs/moment/moment.min.js"></script>
+		<script src="../../assets/js/libs/flot/jquery.flot.min.js"></script>
+		<script src="../../assets/js/libs/flot/jquery.flot.time.min.js"></script>
+		<script src="../../assets/js/libs/flot/jquery.flot.resize.min.js"></script>
+		<script src="../../assets/js/libs/flot/jquery.flot.orderBars.js"></script>
+		<script src="../../assets/js/libs/flot/jquery.flot.pie.js"></script>
+		<script src="../../assets/js/libs/flot/curvedLines.js"></script>
+		<script src="../../assets/js/libs/jquery-knob/jquery.knob.min.js"></script>
+		<script src="../../assets/js/libs/sparkline/jquery.sparkline.min.js"></script>
+		<script src="../../assets/js/libs/nanoscroller/jquery.nanoscroller.min.js"></script>
+		<script src="../../assets/js/libs/toastr/toastr.js"></script>
+		<script src="../../assets/js/libs/d3/d3.min.js"></script>
+		<script src="../../assets/js/libs/d3/d3.v3.js"></script>
+		<script src="../../assets/js/libs/rickshaw/rickshaw.min.js"></script>
+		<script src="../../assets/js/core/source/App.js"></script>
+		<script src="../../assets/js/core/source/AppNavigation.js"></script>
+		<script src="../../assets/js/core/source/AppOffcanvas.js"></script>
+		<script src="../../assets/js/core/source/AppCard.js"></script>
+		<script src="../../assets/js/core/source/AppForm.js"></script>
+		<script src="../../assets/js/core/source/AppNavSearch.js"></script>
+		<script src="../../assets/js/core/source/AppVendor.js"></script>
+		<script src="../../assets/js/core/demo/Demo.js"></script>
+		<script src="../../assets/js/core/demo/DemoDashboard.js"></script>
+		<script src="../../assets/js/libs/jquery-cookie/js.cookie-2.1.3.min.js"></script>
+		<script src="../../assets/js/core/tshockweb/Notifications.js"></script>
+		<script src="../../assets/js/core/tshockweb/Authenticate.js"></script>
+		<script src="../../assets/js/core/tshockweb/Dashboard.js"></script>
+		<script src="../../assets/js/core/tshockweb/ServerManager.js"></script>
+		<!-- END JAVASCRIPT -->
+	</body>
+</html>

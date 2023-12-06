@@ -1,0 +1,20 @@
+{
+  "tshock_web": {
+    "version": 0.6,
+    "api": {
+      "host": "",
+      "port": 4891,
+      "debug": true,
+      "base": "thw"
+    },
+    "web": {
+      "base_location": "webapps",
+      "homepage": "html/pages/login.html"
+    }
+  },
+  "tshock_server": {
+    "host": "127.0.0.1",
+    "port": 26901,
+    "protocol": "http"
+  }
+}

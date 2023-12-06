@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Profile</title>
+
+		<!-- BEGIN META -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="your,keywords">
+		<meta name="description" content="Short explanation about this website">
+		<!-- END META -->
+
+		<!-- BEGIN STYLESHEETS -->
+		<link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet' type='text/css'/>
+		<link type="text/css" rel="stylesheet" href="../../assets/css/theme-default/bootstrap.css?1422792965" />
+		<link type="text/css" rel="stylesheet" href="../../assets/css/theme-default/materialadmin.css?1425466319" />
+		<link type="text/css" rel="stylesheet" href="../../assets/css/theme-default/font-awesome.min.css?1422529194" />
+		<link type="text/css" rel="stylesheet" href="../../assets/css/theme-default/material-design-iconic-font.min.css?1421434286" />
+		<link type="text/css" rel="stylesheet" href="../../assets/css/theme-default/libs/toastr/toastr.css?1425466569">
+		<!-- END STYLESHEETS -->
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="../../assets/js/libs/utils/html5shiv.js?1403934957"></script>
+		<script type="text/javascript" src="../../assets/js/libs/utils/respond.min.js?1403934956"></script>
+		<![endif]-->
+	</head>
+	<body class="menubar-hoverable header-fixed ">
+
+		<!-- BEGIN HEADER-->
+		<header id="header" >
+			<div class="headerbar">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="headerbar-left">
+					<ul class="header-nav header-nav-options">
+						<li class="header-nav-brand" >
+							<div class="brand-holder">
+								<a href="../../html/dashboards/dashboard.html">
+									<span class="text-lg text-bold text-primary">TSHOCKWEB</span>
+								</a>
+							</div>
+						</li>
+						<li>
+							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+								<i class="fa fa-bars"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="headerbar-right">
+					<ul class="header-nav header-nav-options">
+						<li>
+							<a class="btn btn-icon-toggle btn-default" id="tshockweb_refresh_general">
+								<i class="md md-refresh"></i>
+							</a>
+						</li><!--end .dropdown -->
+						<li class="dropdown hidden-xs">
+							<a href="javascript:void(0);" class="btn btn-icon-toggle btn-default" data-toggle="dropdown">
+								<i class="fa fa-power-off"></i>
+							</a>
+							<ul class="dropdown-menu animation-expand">
+								<li class="dropdown-header">What do you want to do?</li>
+								<li>
+									<a class="alert alert-callout alert-info" href="javascript:void(0);" id="tshockweb_reboot">
+										<strong>Reboot</strong><br/>
+										<small>Rebooting TShock server...</small>
+									</a>
+								</li>
+								<li>
+									<a class="alert alert-callout alert-error" href="javascript:void(0);" id="tshockweb_shutdown">
+										<strong>Shutdown</strong><br/>
+										<small>Shutdown TShock server...</small>
+									</a>
+								</li>
+							</ul><!--end .dropdown-menu -->
+						</li><!--end .dropdown -->
+					</ul><!--end .header-nav-options -->
+					<ul class="header-nav header-nav-profile">
+						<li class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">
+								<img src="../../assets/img/terraria/user_logo.png" alt="" />
+								<span class="profile-info" id="tshockweb_profileinfo">
+									<small></small>
+								</span>
+							</a>
+							<ul class="dropdown-menu animation-dock">
+								<li><a style="cursor: pointer;" id="tshockweb_logout"><i class="fa fa-fw fa-power-off text-danger"></i> Logout</a></li>
+							</ul><!--end .dropdown-menu -->
+						</li><!--end .dropdown -->
+					</ul><!--end .header-nav-profile -->
+				</div><!--end #header-navbar-collapse -->
+			</div>
+		</header>
+		<!-- END HEADER-->
+
+		<!-- BEGIN BASE-->
+		<div id="base">
+
+			<!-- BEGIN OFFCANVAS LEFT -->
+			<div class="offcanvas">
+			</div><!--end .offcanvas-->
+			<!-- END OFFCANVAS LEFT -->
+
+			<!-- BEGIN CONTENT-->
+			<div id="content">
+
+				<!-- BEGIN PROFILE HEADER -->
+				<section class="full-bleed">
+					<div class="section-body style-default-dark force-padding text-shadow">
+						<div class="img-backdrop" style="background-image: url('../../assets/img/terraria/img3.png')"></div>
+						<div class="overlay overlay-shade-top stick-top-left height-3"></div>
+						<div class="row">
+							<div class="col-md-3 col-xs-5">
+								<img class="img-circle border-white border-xl img-responsive auto-width" src="../../assets/img/terraria/user_logo.png" alt="" />
+								<h3 id="tshockweb_username"></h3>
+							</div><!--end .col -->
+						</div><!--end .row -->
+						<div class="overlay overlay-shade-bottom stick-bottom-left force-padding text-right">
+							<a class="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Unmute" id="tshockweb_unmute"><i class="md md-mic"></i></a>
+							<a class="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Mute" id="tshockweb_mute"><i class="md md-mic-off"></i></a>
+							<a class="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Kill" id="tshockweb_kill"><i class="md md-flash-on"></i></a>
+							<a class="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Kick" id="tshockweb_kick"><i class="md md-report-problem"></i></a>
+							<a class="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Ban" id="tshockweb_ban"><i class="md md-block"></i></a>
+						</div>
+					</div><!--end .section-body -->
+				</section>
+				<!-- END PROFILE HEADER  -->
+
+				<section>
+					<div class="section-body no-margin">
+						<div class="row">
+							<div class="col-md-8">
+								<h2>Account settings</h2>
+
+								<!-- BEGIN ENTER MESSAGE -->
+								<form class="form">
+									<div class="card no-margin">
+										<div class="card-body">
+											<div class="form-group floating-label">
+												<textarea name="status" id="tshockweb_whisper" class="form-control autosize" rows="1"></textarea>
+												<label for="tshockweb_whisper">Whisper something to the player</label>
+											</div>
+										</div><!--end .card-body -->
+										<div class="card-actionbar">
+											<div class="card-actionbar-row">
+												<a href="javascript:void(0);" class="btn btn-flat btn-accent ink-reaction" id="tshockweb_whisper_send">Send</a>
+											</div><!--end .card-actionbar-row -->
+										</div><!--end .card-actionbar -->
+									</div><!--end .card -->
+								</form>
+
+								<!-- BEGIN ENTER MESSAGE -->
+
+								<!-- BEGIN MESSAGE ACTIVITY -->
+								<div class="tab-pane" id="activity">
+									<ul class="timeline collapse-lg timeline-hairline">
+										<li class="timeline-inverted">
+											<div class="timeline-circ circ-xl style-primary"><i class="md md-contacts"></i></div>
+											<div class="timeline-entry">
+												<div class="card style-default-light">
+													<div class="card-body small-padding">
+														<span class="text-medium">Registered on:</span><br/>
+														<span class="opacity-50" id="tshockweb_profile_registered"></span>
+													</div>
+												</div>
+											</div><!--end .timeline-entry -->
+										</li>
+										<li>
+											<div class="timeline-circ circ-xl style-primary-dark"><i class="fa fa-code"></i></div>
+											<div class="timeline-entry">
+												<div class="card style-default-light">
+													<div class="card-body small-padding">
+														<span class="text-medium">Connecting from IP address:</span><br/>
+														<span class="opacity-50" id="tshockweb_profile_ip"></span>
+													</div>
+												</div>
+											</div><!--end .timeline-entry -->
+										</li>
+										<li class="timeline-inverted">
+											<div class="timeline-circ circ-xl style-primary"><i class="md md-location-on"></i></div>
+											<div class="timeline-entry">
+												<div class="card style-default-light">
+													<div class="card-body small-padding">
+														<span class="text-medium">Position in world:</span><br/>
+														<span class="opacity-50" id="tshockweb_profile_position"></span>
+													</div>
+												</div>
+											</div><!--end .timeline-entry -->
+										</li>
+										<li>
+											<div class="timeline-circ circ-xl style-primary-dark"><i class="fa fa-globe"></i></div>
+											<div class="timeline-entry">
+												<div class="card style-default-light">
+													<div class="card-body small-padding">
+														<span class="text-medium">Current team:</span><br/>
+														<span class="opacity-50" id="tshockweb_profile_team"></span>
+													</div>
+												</div>
+											</div><!--end .timeline-entry -->
+										</li>
+									</ul>
+								</div><!--end #activity -->
+							</div><!--end .col -->
+							<!-- END MESSAGE ACTIVITY -->
+
+							<!-- BEGIN PROFILE MENUBAR -->
+							<div class="col-lg-offset-1 col-lg-3 col-md-4">
+								<div class="card card-underline style-default-dark">
+									<div class="card-head">
+										<header class="opacity-75"><small>Armor</small></header>
+									</div><!--end .card-head -->
+									<div class="card-body no-padding">
+										<ul class="list" id="tshockweb_armor_overview"></ul>
+									</div><!--end .card-body -->
+								</div><!--end .card -->
+								<div class="card card-underline style-default-dark">
+									<div class="card-head">
+										<header class="opacity-75"><small>Buffs</small></header>
+									</div><!--end .card-head -->
+									<div class="card-body no-padding">
+										<ul class="list" id="tshockweb_buffs_overview"></ul>
+									</div><!--end .card-body -->
+								</div><!--end .card -->
+								<div class="card card-underline style-default-dark">
+									<div class="card-head">
+										<header class="opacity-75"><small>Inventory</small></header>
+									</div><!--end .card-head -->
+									<div class="card-body no-padding">
+										<ul class="list" id="tshockweb_inventory_overview"></ul>
+									</div><!--end .card-body -->
+								</div><!--end .card -->
+							</div><!--end .col -->
+							<!-- END PROFILE MENUBAR -->
+
+						</div><!--end .row -->
+					</div><!--end .section-body -->
+				</section>
+			</div><!--end #content-->
+			<!-- END CONTENT -->
+
+			<!-- BEGIN MENUBAR-->
+			<div id="menubar" class="menubar-inverse ">
+				<div class="menubar-fixed-panel">
+					<div>
+						<a class="btn btn-icon-toggle btn-default menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+							<i class="fa fa-bars"></i>
+						</a>
+					</div>
+					<div class="expanded">
+						<a href="../../html/dashboards/dashboard.html">
+							<span class="text-lg text-bold text-primary ">MATERIAL&nbsp;ADMIN</span>
+						</a>
+					</div>
+				</div>
+				<div class="menubar-scroll-panel">
+
+					<!-- BEGIN MAIN MENU -->
+					<ul id="main-menu" class="gui-controls">
+
+						<!-- BEGIN DASHBOARD -->
+						<li>
+							<a href="../../html/dashboards/dashboard.html">
+								<div class="gui-icon"><i class="md md-home"></i></div>
+								<span class="title">Dashboard</span>
+							</a>
+						</li><!--end /menu-li -->
+						<!-- END DASHBOARD -->
+
+						<!-- BEGIN PAGES -->
+						<li>
+							<a href="../pages/commandboard.html">
+								<div class="gui-icon"><i class="md md-computer"></i></div>
+								<span class="title">Command board</span>
+							</a>
+						</li><!--end /menu-li -->
+						<!-- END FORMS -->
+
+
+					</ul><!--end .main-menu -->
+					<!-- END MAIN MENU -->
+
+					<div class="menubar-foot-panel">
+						<small class="no-linebreak hidden-folded">
+							<span class="opacity-75">Copyright &copy; 2014</span> <strong>CodeCovers</strong>
+						</small>
+					</div>
+				</div><!--end .menubar-scroll-panel-->
+			</div><!--end #menubar-->
+			<!-- END MENUBAR -->
+
+		</div><!--end #base-->
+		<!-- END BASE -->
+
+		<!-- BEGIN JAVASCRIPT -->
+		<script src="../../assets/js/libs/jquery/jquery-1.11.2.min.js"></script>
+		<script src="../../assets/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
+		<script src="../../assets/js/libs/jquery-ui/jquery-ui.min.js"></script>
+		<script src="../../assets/js/libs/bootstrap/bootstrap.min.js"></script>
+		<script src="../../assets/js/libs/spin.js/spin.min.js"></script>
+		<script src="../../assets/js/libs/autosize/jquery.autosize.min.js"></script>
+		<script src="../../assets/js/libs/nanoscroller/jquery.nanoscroller.min.js"></script>
+		<script src="../../assets/js/libs/toastr/toastr.js"></script>
+		<script src="../../assets/js/core/source/App.js"></script>
+		<script src="../../assets/js/core/source/AppNavigation.js"></script>
+		<script src="../../assets/js/core/source/AppOffcanvas.js"></script>
+		<script src="../../assets/js/core/source/AppCard.js"></script>
+		<script src="../../assets/js/core/source/AppForm.js"></script>
+		<script src="../../assets/js/core/source/AppNavSearch.js"></script>
+		<script src="../../assets/js/core/source/AppVendor.js"></script>
+		<script src="../../assets/js/core/demo/Demo.js"></script>
+		<script src="../../assets/js/libs/jquery-cookie/js.cookie-2.1.3.min.js"></script>
+		<script src="../../assets/js/core/tshockweb/Profile.js"></script>
+		<script src="../../assets/js/core/tshockweb/Notifications.js"></script>
+		<script src="../../assets/js/core/tshockweb/Authenticate.js"></script>
+		<script src="../../assets/js/core/tshockweb/ServerManager.js"></script>
+		<script src="../../assets/js/core/tshockweb/UserManager.js"></script>
+		<!-- END JAVASCRIPT -->
+
+	</body>
+</html>
